@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title><![CDATA[Nasu Nasu onsen 안내]]></title>
-  <link>https://</link>
-  <description><![CDATA[Nasu 정보 관련 최신 뉴스, 서비스 안내, 리얼 후기 정보를 신속하게 전달하는 공식 RSS 피드입니다.]]></description>
-  <language>ko-KR</language>
-  <pubDate>Tue, 26 May 2026 08:44:32 GMT</pubDate>
-  <lastBuildDate>Tue, 26 May 2026 08:44:32 GMT</lastBuildDate>
-  <atom:link href="https:///feed.xml" rel="self" type="application/rss+xml" />
+  <title><![CDATA[정보]]></title>
+  <link>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen</link>
+  <description><![CDATA[정보 - Nasu onsen 안내 관련 최신 소식 및 가이드]]></description>
+  <language>ko</language>
+  <pubDate>Wed, 10 Jun 2026 02:44:39 GMT</pubDate>
+  <lastBuildDate>Wed, 10 Jun 2026 02:44:39 GMT</lastBuildDate>
+  <atom:link href="https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/feed.xml" rel="self" type="application/rss+xml" />
   
     <item>
-      <title><![CDATA[Nasu Nasu onsen 안내 - 공식 홈페이지 오픈 안내]]></title>
-      <link>https:///</link>
-      <guid isPermaLink="true">https:///</guid>
-      <description><![CDATA[Nasu 정보 관련 최신 뉴스, 서비스 안내, 리얼 후기 정보를 신속하게 전달하는 공식 RSS 피드입니다.]]></description>
-      <pubDate>Tue, 26 May 2026 08:44:32 GMT</pubDate>
+      <title><![CDATA[Nasu onsen 안내 솔직 후기 — 3개월 써본 사람의 리얼 리뷰]]></title>
+      <link>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/review-002-1q4y24p.html</link>
+      <guid isPermaLink="true">https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/review-002-1q4y24p.html</guid>
+      <description><![CDATA[## 포스트 메타정보포스트 기획 테마: Nasu onsen 안내 솔직 후기 — 3개월 써본 사람의 리얼 리뷰 아, 진짜... 2021년 겨울, 서버실 온도가 42도까지 올라갔다. 그 시기에 스노 Snowden은 NSA 프리즘 프로그램을 공개했다. 언론이 다루지 않은 슬]]></description>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Nasu onsen 안내 관련 추천 정보 — 놓치면 후회할 꿀팁]]></title>
+      <link>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/t3link-001-1q4y24p.html</link>
+      <guid isPermaLink="true">https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/t3link-001-1q4y24p.html</guid>
+      <description><![CDATA[### 포스트 메타정보 #### 포스트 기획 테마Nasu onsen 안내 관련 추천 정보 — 놓치면 후회할 꿀팁 #### 백링크 지시본문 내러티브 속에서 다음 링크를 자연스러운 발견으로 녹여라: 상암 코인노래방 모음 ## 상암 코인노래방 모음 아, 진짜... 홍대 상권]]></description>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
     </item>
 </channel>
 </rss>
