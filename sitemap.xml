@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/</loc>
+    <loc>https://nasu-onsen-guide.pbn-builder.xyz/</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/field_note-002-195ujb1.html</loc>
+    <loc>https://nasu-onsen-guide.pbn-builder.xyz/posts/field_note-002-195ujb1.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/review-001-195ujb1.html</loc>
+    <loc>https://nasu-onsen-guide.pbn-builder.xyz/posts/review-001-195ujb1.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/review-002-1q4y24p.html</loc>
+    <loc>https://nasu-onsen-guide.pbn-builder.xyz/posts/review-002-1q4y24p.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/posts/t3link-001-1q4y24p.html</loc>
+    <loc>https://nasu-onsen-guide.pbn-builder.xyz/posts/t3link-001-1q4y24p.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dydrkrtks7-cmd.github.io/bp-nasu-onsen/feed.xml</loc>
-    <lastmod>2026-06-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
   </url>
 </urlset>
