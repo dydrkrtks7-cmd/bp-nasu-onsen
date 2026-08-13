@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · nasu-onsen</title>
+  <meta name="description" content="nasu-onsen에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://nasu-onsen-guide.pbn-builder.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* --- COLOR PALETTE & FONT DEFINITIONS --- */
+ :root {
+ --color-primary: #000000;
+ --color-secondary: #ffffff;
+ --color-accent: #ff3b00;
+ --font-main: 'Impact', 'system-ui', sans-serif;
+ }
+
+ /* --- BASE STYLES & TYPOGRAPHY --- */
+ body {
+ background-color: var(--color-primary);
+ color: var(--color-secondary);
+ font-family: var(--font-main);
+ line-height: 1.45; /* 기본 가독성 확보를 위한 조정 */
+ margin: 0;
+ padding: 0;
+ }
+
+ *, *::before, *::after {
+ box-sizing: border-box;
+ }
+
+ /* Raw Type & Boldness Enforcement */
+ h1, h2, h3, p, a, li {
+ font-weight: 900; /* Ultra Bold 느낌 강조 */
+ }
+
+ a {
+ color: var(--color-accent);
+ text-decoration: none;
+ transition: color 0.2s ease-in-out;
+ border-bottom: 3px solid transparent; /* 기본 보더 설정 */
+ }
+
+ a:hover {
+ color: var(--color-secondary);
+ border-bottom: 3px solid var(--color-accent);
+ }
+
+ /* --- LAYOUT & SPACING (SPACE Rules) --- */
+ .container {
+ max-width: none; /* Full Bleed 지향 */
+ padding: 0 48px; /* 좌우 패딩 */
+ }
+
+ .section {
+ padding: 80px 0; /* section-gap (상하) + padding-top/bottom = 160px */
+ margin-bottom: 32px; /* gap 적용을 위한 추가 마진 */
+ }
+
+ /* --- COMPONENT STYLES --- */
+ .border-block {
+ border: 4px solid var(--color-accent); /* 강렬한 보더 */
+ padding: 48px; /* 내부 패딩 */
+ margin-bottom: 32px; /* 블록 간 간격 (gap) */
+ background-color: rgba(255, 59, 0, 0.05); /* 미세한 배경색 부여 (Subtle but present texture) */
+ }
+
+ /* --- HEADER/NAV STYLING --- */
+ header {
+ border-bottom: 4px solid var(--color-accent);
+ padding: 24px 0; /* 헤더 내부 패딩 조정 */
+ }
+
+ nav ul {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+ display: flex;
+ justify-content: center; /* 중앙 정렬 시도 (하지만 비대칭을 위해 Flex 사용) */
+ gap: 48px; /* 네비게이션 항목 간격 */
+ }
+
+ nav a {
+ font-size: 1.2rem;
+ color: var(--color-secondary);
+ border-bottom-width: 3px; /* 보더 두께 재확인 */
+ padding-bottom: 5px;
+ }
+
+ /* --- HERO SECTION STYLING (Asymmetric & Oversized) --- */
+ .hero {
+ text-align: center;
+ padding: 120px 48px; /* 대폭 늘린 패딩 */
+ border-left: 6px solid var(--color-accent); /* 비대칭 요소 1 */
+ transform: skewX(-3deg); /* 기울임 적용 */
+ }
+
+ .hero h1 {
+ font-size: clamp(3rem, 8vw, 5.5rem); /* Oversized Typography (H1 > 3rem) */
+ margin: 0 0 20px 0;
+ letter-spacing: 4px;
+ color: var(--color-accent);
+ text-shadow: 4px 4px 0 #000000; /* 그림자 추가로 입체감 부여 */
+ }
+
+ .hero p {
+ font-size: clamp(1.2rem, 3vw, 1.8rem);
+ opacity: 0.9;
+ margin-bottom: 30px;
+ }
+ 
+ /* --- UGC CARD STYLES (Overlapping Feel) --- */
+ .reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 32px; /* 블록 간격 재확인 */
+ }
+
+ .review-card {
+ border: 4px solid var(--color-primary); /* 기본 보더 */
+ background-color: var(--color-secondary); /* 카드 배경을 흰색으로 대비 강조 */
+ color: var(--color-primary);
+ padding: 32px; /* 내부 패딩 조정 */
+ /* 비대칭/겹침 효과를 위한 트릭 */
+ transform: rotate(0.5deg) translate(1px, -1px); 
+ box-shadow: 8px 8px 0 rgba(255, 59, 0, 0.3); /* 강렬한 그림자 */
+ transition: transform 0.3s ease;
+ }
+
+ .review-card:hover {
+ transform: rotate(-1deg) translate(-1px, 1px) scale(1.02);
+ }
+
+ .review-author {
+ font-size: 1.4rem;
+ color: var(--color-accent);
+ margin-top: 0;
+ margin-bottom: 8px;
+ display: block;
+ }
+ 
+ .stars {
+ color: #ffbb00; /* 별 색상 */
+ font-size: 1.5rem;
+ letter-spacing: 2px;
+ line-height: 1;
+ margin-bottom: 15px;
+ display: block;
+ }
+
+ .review-body {
+ font-size: 1.05rem;
+ }
+
+ /* --- FOOTER STYLING --- */
+ footer {
+ border-top: 4px solid var(--color-accent);
+ padding: 32px 0;
+ text-align: center;
+ font-size: 0.9rem;
+ opacity: 0.7;
+ }
+
+ /* --- RESPONSIVENESS (Mobile First adjustment) --- */
+ @media (max-width: 1024px) {
+ .container {
+ padding: 0 32px; /* 태블릿 이하에서는 패딩 축소 */
+ }
+
+ .section {
+ padding: 60px 0; /* 모바일에서 세로 공간 압축 */
+ }
+ }
+
+ @media (max-width: 768px) {
+ /* Full bleed를 유지하되, 요소들이 너무 넓게 퍼지는 것을 방지 */
+ .container {
+ padding: 0 24px;
+ }
+ 
+ /* 헤더/내비게이션 처리 (햄버거 메뉴 준비) */
+ nav ul {
+ justify-content: space-between; /* 양 끝으로 분산 배치 */
+ flex-wrap: wrap; /* 줄바꿈 허용 */
+ gap: 20px;
+ }
+
+ /* 히어로 섹션의 비대칭 강조 */
+ .hero {
+ transform: skewX(-15deg); /* 모바일에서 더 과격하게 기울임 */
+ padding: 80px 24px;
+ }
+
+ .review-card {
+ border: 3px solid var(--color-accent); /* 모바일에서는 보더 두께 미세 조정 */
+ transform: rotate(1deg) translate(0, -1px); /* 회전 각도 변경 */
+ }
+ }
+
+ /* --- HAMBURGER MENU STYLES (Mobile Specific) --- */
+ .hamburger {
+ display: none; /* 기본적으로 숨김 */
+ cursor: pointer;
+ font-size: 2rem;
+ text-align: right;
+ padding-right: 10px;
+ }
+
+ @media (max-width: 768px) {
+ .hamburger {
+ display: block; /* 모바일에서 보임 */
+ }
+
+ /* 네비게이션은 Flex로 유지하되, 메뉴가 숨겨지는 시나리오를 가정 */
+ nav ul {
+ flex-direction: column; /* 세로 정렬 */
+ gap: 15px;
+ }
+ }
+
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · nasu-onsen">
+  <meta property="og:description" content="nasu-onsen에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://nasu-onsen-guide.pbn-builder.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 34개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0159.html">Nasu onsen 안내와 함께 짚어보는 공덕 가라오케 추천정보 예약 과정</a>
+        <p class="post-item__summary">Nasu onsen 안내를 확인하는 정성만큼이나 공덕 지역에서 가라오케를 예약할 때도 세심한 준비가 필요합니다. 많은 이용자가 예약 단계에서 가장 흔히 겪는 실패는 세부 조건을 간과하는 것입니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0160.html">Nasu onsen 안내를 보며 확인하는 상수 마사지 추천정보 접근성 체크</a>
+        <p class="post-item__summary">Nasu onsen 안내 정보에서 온천의 위치와 이동 편의성을 중요하게 다루듯이, 상수 지역의 마사지 샵을 선택할 때도 접근성은 고려해야 할 첫 번째 요소입니다. 마사지는 신체의 피로를 풀기 위해 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0161.html">Nasu onsen 안내 확인하고 망원 노래방 추천정보 찾아 즐거운 시간 보내기</a>
+        <p class="post-item__summary">친구들과 저녁 식사를 마치고 소화를 시킬 겸 가벼운 유흥을 찾다가 망원동 골목을 헤매는 경우가 종종 있습니다. 평소 Nasu onsen 안내 정보를 찾아보듯 꼼꼼하게 방문할 곳을 미리 확인하는 것이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0162.html">Nasu onsen 안내 습득처럼 효율적인 홍대 노래방 추천정보 이용하기</a>
+        <p class="post-item__summary">홍대 일대에서 밤을 즐기는 일이 막연히 비용이 많이 들고 복잡할 것이라는 오해를 하는 분들이 많습니다. 실제로는 합리적인 가격과 효율적인 시간대 운영을 하는 곳이 상당히 많습니다. Nasu onse</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0163.html">Nasu onsen 안내 철학으로 살펴보는 공덕 셔츠룸 추천정보 선택 기준</a>
+        <p class="post-item__summary">공덕 지역에서 공간을 선택할 때는 인원 수용 범위, 서비스 품질, 위치의 접근성이라는 세 가지 조건을 충족해야 합니다. 마치 Nasu onsen 안내 시스템이 갖춰진 곳을 선별하는 것과 같은 원리입</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0164.html">Nasu onsen 안내처럼 신중한 연남 유흥 추천정보 비교 및 분석 방법</a>
+        <p class="post-item__summary">오늘 저녁 연남동에서 무엇을 하며 시간을 보낼지 고민해 보셨나요? 매번 같은 선택을 반복하기보다는 Nasu onsen 안내 정보를 체계적으로 찾던 정성으로 유흥지를 골라보는 것은 어떨까요? 올바른 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0165.html">Nasu onsen 안내를 통한 마곡 가라오케 추천정보 활용법</a>
+        <p class="post-item__summary">Nasu onsen 안내를 찾는 여행객들이 정보의 신뢰도를 따지는 것처럼, 마곡 지역의 유흥 시설을 선택할 때도 체계적인 검증 과정이 필요합니다. 온라인상에 산재한 정보를 무조건 신뢰하기보다는 일정</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0195.html">Nasu onsen 안내: 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">단체 인원이 수용 가능할 것, 쾌적한 환기 시설이 갖춰져 있을 것, 그리고 무엇보다 예약 시스템이 체계적일 것 등은 성공적인 모임을 위해 반드시 충족되어야 하는 필수 조건들입니다. Nasu onse</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0196.html">Nasu onsen 안내: 합정 셔츠룸 단골들이 뽑은 핫플 매거진과 비교 가이드</a>
+        <p class="post-item__summary">여러분은 평소 합정 셔츠룸을 선택할 때 무엇을 가장 우선순위에 두고 고민하시나요? Nasu onsen 안내 서비스에서 온천의 수질을 따지듯, 유흥 시설도 그만의 독자적인 매력과 신뢰도를 확인하는 과</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0197.html">Nasu onsen 안내를 통한 마포 홍대 로컬 럭셔리 밤문화 가이드 전략</a>
+        <p class="post-item__summary">해외 온천 여행지인 Nasu onsen 안내 내용을 참고하여 국내에서도 고품격 휴식을 찾는 여행객들이 늘고 있습니다. 특히 서울 마포와 홍대 지역은 독특한 소셜 밤문화가 발달하여 많은 방문객이 찾는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0198.html">Nasu onsen 안내와 연계된 구글 신뢰 지수 모발이식 솔루션 분석</a>
+        <p class="post-item__summary">여행을 준비하며 Nasu onsen 안내 정보를 찾는 과정과 의료 서비스를 탐색하는 과정은 정보의 정확성이 중요하다는 점에서 공통점을 가집니다. 특히 모발이식과 같은 민감한 의료 분야에서는 디지털 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001-195ujb1.html">Nasu onsen 안내</a>
+        <p class="post-item__summary">나스 온천은 일본 도치기현 북부의 나스 산지 일대에 형성된 유서 깊은 온천 지대입니다. 예로부터 화산 활동으로 인해 풍부한 온천수가 솟아나면서 많은 사람이 몸과 마음을 치유하기 위해 방문하던 곳입니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002-1q4y24p.html">Nasu onsen 안내 솔직 후기</a>
+        <p class="post-item__summary">나스 지역은 자연이 어우러진 휴양지로 많은 여행객이 찾는 곳입니다. 이곳의 온천은 오랜 세월 동안 피로를 회복하고 심신의 안정을 찾는 사람들에게 큰 사랑을 받아왔습니다. 계절마다 변화하는 산의 풍경</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/t3link-001-1q4y24p.html">나스 온천의 수질 분석과 개인적인 선호도 등급</a>
+        <p class="post-item__summary">나스 온천을 방문하시려는 귀한 분들께 수질이라는 아주 세밀한 영역에 대해 안내해 드리고자 합니다. 보통은 단순히 뜨겁다거나 기분이 좋다는 모호한 표현을 쓰시곤 하지만, 사실 나스 온천은 성분에 따라</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
